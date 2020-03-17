@@ -3,15 +3,12 @@ const pkgUp = require('pkg-up');
 const path = require('path');
 const fs = require('fs');
 const { homedir, platform } = require('os');
-
-const packageName = require(pkgUp.sync()).name;
+const parentDir = path.dirname((module.parent && module.parent.filename) || '.');
+const packageName = require(pkgUp.sync({ cwd: parentDir })).name;
 
 class HomeConf {
   _getHomeConfPath() {
-    return path.join(
-      homedir(),
-      platform() == 'win32' ? `${packageName}.json` : `.${packageName}.json`
-    );
+    return path.join(homedir(), platform() == 'win32' ? `${packageName}.json` : `.${packageName}.json`);
   }
 
   _loadFile(filePath) {
@@ -47,9 +44,7 @@ class HomeConf {
     this.config = {};
     this.path = this._getHomeConfPath();
     this.defaultValue =
-      typeof defaultFileOrObject == 'string'
-        ? this._loadFile(defaultFileOrObject)
-        : defaultFileOrObject;
+      typeof defaultFileOrObject == 'string' ? this._loadFile(defaultFileOrObject) : defaultFileOrObject;
 
     this.config = this._load();
 
