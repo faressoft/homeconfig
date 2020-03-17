@@ -1,7 +1,7 @@
 # HomeConf
 
-[![npm](https://img.shields.io/npm/v/homeconf.svg)](https://www.npmjs.com/package/homeconf)
-[![npm](https://img.shields.io/npm/l/homeconf.svg)](https://github.com/faressoft/homeconf/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/v/homeconfjs.svg)](https://www.npmjs.com/package/homeconfjs)
+[![npm](https://img.shields.io/npm/l/homeconfjs.svg)](https://github.com/faressoft/homeconfjs/blob/master/LICENSE)
 
 > Global config files for cli apps helper
 
@@ -25,21 +25,21 @@ The file will be created automatically, named `packageName.json`
 at the path `homeConf.path` that may varies depending on the current OS. 
 
 ```js
-const HomeConf = require('homeconf');
+const HomeConf = require('homeconfjs');
 const homeConf = new HomeConf(); // Default: {}
 ```
 
 Or
 
 ```js
-const HomeConf = require('homeconf');
+const HomeConf = require('homeconfjs');
 const homeConf = new HomeConf({defaultObject}); // Specify the default object
 ```
 
 Or
 
 ```js
-const HomeConf = require('homeconf');
+const HomeConf = require('homeconfjs');
 const homeConf = new HomeConf(`${__dirname}/default.json`); // Use the file as default
 ```
 

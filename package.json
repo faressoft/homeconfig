@@ -1,6 +1,6 @@
 {
   "name": "homeconfjs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Global config files for cli apps helper",
   "main": "index.js",
   "author": "Mohammad Fares <faressoft.com@gmail.com>",
